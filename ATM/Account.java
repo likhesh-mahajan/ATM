@@ -3,26 +3,20 @@ import java.text.DecimalFormat;
 import java.util.*;
 
 public class Account {
-  // variables
   private double savingBalance = 0;
-
-  // Extra Code
-
   protected static final int[] currDenom = { 20, 10, 5, 1 };
   protected static int[] currNo = { 1, 4, 2, 10 };
   protected int[] count = { 0, 0, 0, 0 };
   protected static int totalCorpus = 0;
+
+  Scanner input = new Scanner(System.in);
+  DecimalFormat moneyFormat = new DecimalFormat("'$'###,##0.00");
 
   public static void calcTotalCorpus() {
     for (int i = 0; i < currDenom.length; i++) {
       totalCorpus = totalCorpus + currDenom[i] * currNo[i];
     }
   }
-
-  // Extra Code
-
-  Scanner input = new Scanner(System.in);
-  DecimalFormat moneyFormat = new DecimalFormat("'$'###,##0.00");
 
   public double getSavingBalance() {
     return savingBalance;
